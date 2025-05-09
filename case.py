@@ -16,11 +16,3 @@ class Case:
                 self.notes.append(text)
     
 
-if __name__ == "__main__":
-    my_case = Case("Thomas unpluged the pcs", "Thomas")
-    my_case.add_note("Observed thomas sneaking behind pc's on security footage.")
-    print(f"Title: {my_case.title}")
-    print(f"Suspect: {my_case.suspect}")
-    print(f"Notes: {my_case.notes}")
-    print(f"Status: {my_case.status}")
-
