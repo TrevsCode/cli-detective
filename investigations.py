@@ -19,3 +19,8 @@ def search_cases(self, name):
             if case.suspect == name:
                 filtered_cases.append(case)
         return filtered_cases
+
+def close_case(self, title):
+    for case in self.cases:
+        if case.title == title:
+            case.status = "Closed"
