@@ -1,9 +1,10 @@
 class Case:
     def __init__(self, title, suspect, notes=None):
         self.status = "open"
-        self.notes = []
         self.title = title
         self.suspect = suspect
+        self.notes = [notes] if notes else []
+
 
     def add_note(self, text):
             if text == None:
@@ -15,4 +16,7 @@ class Case:
             else:
                 self.notes.append(text)
     
+    def __str__(self):
+         
+         return f"Case title: {self.title}, Case suspect: {self.suspect}, Case notes: {self.notes}"
 
