@@ -34,4 +34,4 @@ class Investigations:
             if case.title == title:
                 return case
         else:
-            raise Exception("Case title not found")
+            raise Exception("Case with title {title} not found!")

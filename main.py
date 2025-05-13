@@ -29,9 +29,21 @@ def main():
             note = input("Provide your new note: ")
             case_to_update.add_note(note)
         elif choice == '4':
-            logbook.search_cases()
+            casesuspect = input("Which suspect are you looking at cases for?: ")
+            results = logbook.search_cases(casesuspect)
+            if results:
+                for case in results:
+                    print(case)
+            else:
+                print(f"No cases found by the name of {casesuspect}")
         elif choice == '5':
-            logbook.close_case()
+            closecase = input("Which case would you like to close, please enter the title: ")
+            try:
+                case_to_close = logbook.get_case_by_title(closecase)
+                logbook.close_case(closecase)
+                print(f"Case with title {closecase} has been closed!")
+            except Exception:
+                print(f"Unable to find cases by the name of: {closecase}")
         elif choice == 'q':
             break
         else:
