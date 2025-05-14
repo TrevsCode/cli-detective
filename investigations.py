@@ -4,6 +4,9 @@ class Investigations:
 
     def add_case(self, case):
         self.cases.append(case)
+        with open("cases.txt", "a") as file:
+            file.write(f"{case.title},{case.suspect},{case.status},{'|'.join(case.notes)}\n")
+
         
     def list_cases(self):
         open_cases = []
